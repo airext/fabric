@@ -37,4 +37,5 @@ bin-release/
 
 # AirExt
 #
-build/launch/* 
+*/build/launch/**
+*/build/ios/**
