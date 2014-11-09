@@ -1,6 +1,6 @@
 # Xcode
 #
-build/
+# build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,3 +24,17 @@ DerivedData
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 # Pods/
+
+# Intellij IDEA
+#
+.idea/workspace.xml
+.idea/tasks
+
+# ActionScript
+#
+bin-debug/
+bin-release/
+
+# AirExt
+#
+build/launch/* 
