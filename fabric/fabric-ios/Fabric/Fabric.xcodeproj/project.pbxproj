@@ -59,8 +59,6 @@
 		0E0A1CF11A096CDD00745C40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E0A1CF41A096CDD00745C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0E0A1D1B1A096FE500745C40 /* FabricDebug copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FabricDebug copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E0A1D1C1A096FE500745C40 /* FabricDebug copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FabricDebug copy-Info.plist"; path = "/Users/mobitile/labs/playground/fabric/fabric/fabric-ios/Fabric/FabricDebug copy-Info.plist"; sourceTree = "<absolute>"; };
-		0E0A1D2E1A09703800745C40 /* FabricDebug copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FabricDebug copy2-Info.plist"; path = "/Users/mobitile/labs/playground/fabric/fabric/fabric-ios/Fabric/FabricDebug copy2-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +86,6 @@
 				0E0A1CB21A09230900745C40 /* Fabric */,
 				0E0A1CE31A096CDD00745C40 /* ANXFabricDebug */,
 				0E0A1CB11A09230900745C40 /* Products */,
-				0E0A1D1C1A096FE500745C40 /* FabricDebug copy-Info.plist */,
-				0E0A1D2E1A09703800745C40 /* FabricDebug copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\nsource ~/.profile\n\nPATH=${PATH}:~/sdks/air/4.0.0/bin\n\necho \"Please provide the complete path of the IPA before building this target\"\n\nBUILD_DIR=~/labs/playground/fabric/fabric/build/\nANE_NAME=\"Fabric.ane\"\n\n#IPA_DIR=`/usr/bin/dirname \"$PATH_TO_IPA\"`\nIPA_DIR=~/labs/playground/fabric/fabric/build/launch\n#IPA_NAME=`/usr/bin/basename \"$PATH_TO_IPA\"`\nIPA_NAME=\"FabricDebug.ipa\"\n#IPA_BASE_NAME=`/usr/bin/basename \"$PATH_TO_IPA\" .ipa`\nIPA_BASE_NAME=\"FabricDebug\"\n\n#package Fabric.ane\n\npushd \"$BUILD_DIR\"\n\necho \"packaging fabric.ane extension...\"\n\nsh build.sh\n\necho \"fabric.ane packaged.\"\n\necho \"packaging FabricDebug.ipa application...\"\n\nsh debug.sh\n\necho \"FabricDebug.ipa packaged.\"\n\npopd\n\n#debug FabricDebug.ipa\n\necho start\necho \"$IPA_DIR\"\necho $IPA_NAME\necho $IPA_BASE_NAME\n\n# change to the proper directory\npushd \"$IPA_DIR\"\n\n# extract the IPA\ncp \"$IPA_NAME\" \"$IPA_NAME\".zip\nunzip -o \"$IPA_NAME\".zip\nrm \"$IPA_NAME\".zip\n\n# copy the contents of the IPA to the location xcode wants\ncp -r Payload/\"$IPA_BASE_NAME\".app/ \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\ncp -r \"$IPA_BASE_NAME\".app.dSYM \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\n\n# remove the following files and folders to avoid signature errors when installing the app\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/PkgInfo\" #2>/dev/null\n\n\n# restore working directory\npopd";
+			shellScript = "#!/bin/sh\n\nsource ~/.profile\n\nPATH=${PATH}:~/sdks/air/4.0.0/bin\n\necho \"Please provide the complete path of the IPA before building this target\"\n\nBUILD_DIR=~/dev/airext/fabric/fabric/build/\nANE_NAME=\"Fabric.ane\"\n\n#IPA_DIR=`/usr/bin/dirname \"$PATH_TO_IPA\"`\nIPA_DIR=~/dev/airext/fabric/fabric/build/launch\n#IPA_NAME=`/usr/bin/basename \"$PATH_TO_IPA\"`\nIPA_NAME=\"FabricDebug.ipa\"\n#IPA_BASE_NAME=`/usr/bin/basename \"$PATH_TO_IPA\" .ipa`\nIPA_BASE_NAME=\"FabricDebug\"\n\n#package Fabric.ane\n\npushd \"$BUILD_DIR\"\n\necho \"packaging fabric.ane extension...\"\n\nsh build.sh\n\necho \"fabric.ane packaged.\"\n\necho \"packaging FabricDebug.ipa application...\"\n\nsh debug.sh\n\necho \"FabricDebug.ipa packaged.\"\n\npopd\n\n#debug FabricDebug.ipa\n\necho start\necho \"$IPA_DIR\"\necho $IPA_NAME\necho $IPA_BASE_NAME\n\n# change to the proper directory\npushd \"$IPA_DIR\"\n\n# extract the IPA\ncp \"$IPA_NAME\" \"$IPA_NAME\".zip\nunzip -o \"$IPA_NAME\".zip\nrm \"$IPA_NAME\".zip\n\n# copy the contents of the IPA to the location xcode wants\ncp -r Payload/\"$IPA_BASE_NAME\".app/ \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\ncp -r \"$IPA_BASE_NAME\".app.dSYM \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\n\n# remove the following files and folders to avoid signature errors when installing the app\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/PkgInfo\" #2>/dev/null\n\n\n# restore working directory\npopd";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -449,6 +445,7 @@
 				0E0A1CC61A09230900745C40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E0A1D181A096FE500745C40 /* Build configuration list for PBXNativeTarget "FabricDebug" */ = {
 			isa = XCConfigurationList;
