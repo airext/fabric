@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark">
+
+        <fx:Script>
+                <![CDATA[
+                import com.github.airext.fabric.Crashlytics;
+                import com.github.airext.fabric.Fabric;
+
+                import spark.components.Alert;
+
+                private function isSupported_clickHandler(event:MouseEvent):void
+                {
+                        Alert.show(String(Fabric.isSupported()));
+                }
+
+                private function debug_clickHandler(event:MouseEvent):void
+                {
+                        Fabric.sharedInstance().debug = !Fabric.sharedInstance().debug;
+                }
+
+                private function withKits_clickHandler(event:MouseEvent):void
+                {
+                        Fabric.withKits(new Crashlytics());
+                }
+
+                ]]>
+        </fx:Script>
+
+        <fx:Declarations>
+
+        </fx:Declarations>
+
+        <s:layout>
+                <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
+        </s:layout>
+
+        <s:Button label="Is Supported" click="isSupported_clickHandler(event)" />
+
+        <s:Button label="With Kits" click="withKits_clickHandler(event)" />
+
+        <s:CheckBox label="Debug" selected="{Fabric.sharedInstance().debug}" click="debug_clickHandler(event)" />
+
+</s:View>
