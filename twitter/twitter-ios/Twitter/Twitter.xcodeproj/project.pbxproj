@@ -7,20 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5028B09F1A11306F007A3D32 /* Twitter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5028B09E1A11306F007A3D32 /* Twitter.h */; };
-		5028B0A11A11306F007A3D32 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5028B0A01A11306F007A3D32 /* Twitter.m */; };
-		5028B0A71A113070007A3D32 /* libTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5028B09B1A11306F007A3D32 /* libTwitter.a */; };
+		5028B09F1A11306F007A3D32 /* ANXTwitterFacade.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */; };
+		5028B0A11A11306F007A3D32 /* ANXTwitterFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */; };
+		5028B0B91A11450A007A3D32 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5028B0B81A11450A007A3D32 /* TwitterKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5028B0A81A113070007A3D32 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5028B0931A11306F007A3D32 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5028B09A1A11306F007A3D32;
-			remoteInfo = Twitter;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5028B0991A11306F007A3D32 /* CopyFiles */ = {
@@ -29,7 +19,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				5028B09F1A11306F007A3D32 /* Twitter.h in CopyFiles */,
+				5028B09F1A11306F007A3D32 /* ANXTwitterFacade.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,10 +27,11 @@
 
 /* Begin PBXFileReference section */
 		5028B09B1A11306F007A3D32 /* libTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwitter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5028B09E1A11306F007A3D32 /* Twitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
-		5028B0A01A11306F007A3D32 /* Twitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
-		5028B0A61A113070007A3D32 /* TwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5028B0AC1A113070007A3D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXTwitterFacade.h; sourceTree = "<group>"; };
+		5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXTwitterFacade.m; sourceTree = "<group>"; };
+		5028B0B51A113115007A3D32 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = Twitter/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		5028B0B71A113E64007A3D32 /* ANXFabricConversionRoutines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ANXFabricConversionRoutines.h; path = Twitter/ANXFabricConversionRoutines.h; sourceTree = "<group>"; };
+		5028B0B81A11450A007A3D32 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,14 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5028B0A31A113070007A3D32 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5028B0A71A113070007A3D32 /* libTwitter.a in Frameworks */,
+				5028B0B91A11450A007A3D32 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +49,8 @@
 		5028B0921A11306F007A3D32 = {
 			isa = PBXGroup;
 			children = (
+				5028B0B81A11450A007A3D32 /* TwitterKit.framework */,
 				5028B09D1A11306F007A3D32 /* Twitter */,
-				5028B0AA1A113070007A3D32 /* TwitterTests */,
 				5028B09C1A11306F007A3D32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				5028B09B1A11306F007A3D32 /* libTwitter.a */,
-				5028B0A61A113070007A3D32 /* TwitterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,26 +66,21 @@
 		5028B09D1A11306F007A3D32 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
-				5028B09E1A11306F007A3D32 /* Twitter.h */,
-				5028B0A01A11306F007A3D32 /* Twitter.m */,
+				5028B0B61A113DF7007A3D32 /* Supporting Files */,
+				5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */,
+				5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
 		};
-		5028B0AA1A113070007A3D32 /* TwitterTests */ = {
+		5028B0B61A113DF7007A3D32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5028B0AB1A113070007A3D32 /* Supporting Files */,
-			);
-			path = TwitterTests;
-			sourceTree = "<group>";
-		};
-		5028B0AB1A113070007A3D32 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5028B0AC1A113070007A3D32 /* Info.plist */,
+				5028B0B71A113E64007A3D32 /* ANXFabricConversionRoutines.h */,
+				5028B0B51A113115007A3D32 /* FlashRuntimeExtensions.h */,
 			);
 			name = "Supporting Files";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,24 +103,6 @@
 			productReference = 5028B09B1A11306F007A3D32 /* libTwitter.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		5028B0A51A113070007A3D32 /* TwitterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5028B0B21A113070007A3D32 /* Build configuration list for PBXNativeTarget "TwitterTests" */;
-			buildPhases = (
-				5028B0A21A113070007A3D32 /* Sources */,
-				5028B0A31A113070007A3D32 /* Frameworks */,
-				5028B0A41A113070007A3D32 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5028B0A91A113070007A3D32 /* PBXTargetDependency */,
-			);
-			name = TwitterTests;
-			productName = TwitterTests;
-			productReference = 5028B0A61A113070007A3D32 /* TwitterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,9 +113,6 @@
 				ORGANIZATIONNAME = "Max Rozdobudko";
 				TargetAttributes = {
 					5028B09A1A11306F007A3D32 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					5028B0A51A113070007A3D32 = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -173,46 +130,20 @@
 			projectRoot = "";
 			targets = (
 				5028B09A1A11306F007A3D32 /* Twitter */,
-				5028B0A51A113070007A3D32 /* TwitterTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		5028B0A41A113070007A3D32 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5028B0971A11306F007A3D32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5028B0A11A11306F007A3D32 /* Twitter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5028B0A21A113070007A3D32 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				5028B0A11A11306F007A3D32 /* ANXTwitterFacade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5028B0A91A113070007A3D32 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5028B09A1A11306F007A3D32 /* Twitter */;
-			targetProxy = 5028B0A81A113070007A3D32 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5028B0AD1A113070007A3D32 /* Debug */ = {
@@ -292,6 +223,10 @@
 		5028B0B01A113070007A3D32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -301,39 +236,13 @@
 		5028B0B11A113070007A3D32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5028B0B31A113070007A3D32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TwitterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		5028B0B41A113070007A3D32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TwitterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -354,14 +263,6 @@
 			buildConfigurations = (
 				5028B0B01A113070007A3D32 /* Debug */,
 				5028B0B11A113070007A3D32 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		5028B0B21A113070007A3D32 /* Build configuration list for PBXNativeTarget "TwitterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5028B0B31A113070007A3D32 /* Debug */,
-				5028B0B41A113070007A3D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
