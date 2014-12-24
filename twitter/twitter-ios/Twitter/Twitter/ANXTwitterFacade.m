@@ -17,26 +17,129 @@ FREObject ANXTwitterIsSupported(FREContext context, void* functionData, uint32_t
     return [ANXFabricConversionRoutines convertBoolToFREObject: YES];
 }
 
+#pragma mark Twitter
+
 FREObject ANXTwitterLogin(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    [Twitter sharedInstance];
+    NSLog(@"ANXTwitterLogin");
     
-    return NULL;
+    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    
+    [[Twitter sharedInstance] logInWithCompletion:
+        ^(TWTRSession *session, NSError *error)
+        {
+            if (session)
+            {
+                NSLog(@"ANXTwitterLogin: %@", session.userName);
+                
+                [call result: [[ANXTwitterSession alloc] init:session]];
+            }
+            else
+            {
+                NSLog(@"ANXTwitterLogin: Error");
+                
+                [call reject:error];
+            }
+        }];
+    
+    return [call toFREObject];
 }
 
 FREObject ANXTwitterLogout(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
+    NSLog(@"ANXTwitterLogout");
+    
+    [[Twitter sharedInstance] logOut];
+    
     return NULL;
 }
 
-
 FREObject ANXTwitterLoginGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    return NULL;
+    NSLog(@"ANXTwitterLoginGuest");
+    
+    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    
+    [[Twitter sharedInstance] logInGuestWithCompletion:
+        ^(TWTRGuestSession *session, NSError *error)
+        {
+            if (session)
+            {
+                NSLog(@"ANXTwitterLoginGuest: %@", session);
+                
+                [call result: [[ANXTwitterGuestSession alloc] init:session]];
+            }
+            else
+            {
+                NSLog(@"ANXTwitterLoginGuest: Error");
+                
+                [call reject:error];
+            }
+        }];
+
+    return [call toFREObject];
 }
 
 FREObject ANXTwitterLogoutGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
+    NSLog(@"ANXTwitterLogoutGuest");
+    
+    [[Twitter sharedInstance] logOutGuest];
+    
+    return NULL;
+}
+
+#pragma mark Digits
+
+FREObject ANXDigitsAuthenticate(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXDigitsAuthenticate");
+    
+    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    
+    if (argc == 0)
+    {
+        [[Digits sharedInstance] authenticateWithCompletion:
+            ^(DGTSession *session, NSError *error)
+            {
+                if (session)
+                {
+                    [call result: [[ANXDigitsSession alloc] init:session]];
+                }
+                else
+                {
+                    [call reject:error];
+                }
+            
+            }];
+    }
+    else // argc >= 0
+    {
+        NSString *title = [ANXFabricConversionRoutines convertFREObjectToNSString:argv[0]];
+        
+        [[Digits sharedInstance] authenticateWithTitle:title completion:
+            ^(DGTSession *session, NSError *error)
+            {
+                if (session)
+                {
+                    [call result: [[ANXDigitsSession alloc] init:session]];
+                }
+                else
+                {
+                    [call reject:error];
+                }
+            }];
+    }
+    
+    return [call toFREObject];
+}
+
+FREObject ANXDigitsLogout(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXDigitsLogout");
+    
+    [[Digits sharedInstance] logOut];
+    
     return NULL;
 }
 
@@ -46,7 +149,7 @@ void ANXTwitterContextInitializer(void* extData, const uint8_t* ctxType, FRECont
 {
     NSLog(@"ANXTwitterContextInitializer");
     
-    *numFunctionsToTest = 5;
+    *numFunctionsToTest = 7;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -69,6 +172,16 @@ void ANXTwitterContextInitializer(void* extData, const uint8_t* ctxType, FRECont
     func[4].name = (const uint8_t*) "logoutGuest";
     func[4].functionData = NULL;
     func[4].function = &ANXTwitterLogoutGuest;
+    
+    func[5].name = (const uint8_t*) "digitsAuthenticate";
+    func[5].functionData = NULL;
+    func[5].function = &ANXDigitsAuthenticate;
+    
+    func[6].name = (const uint8_t*) "digitsLogout";
+    func[6].functionData = NULL;
+    func[6].function = &ANXDigitsLogout;
+    
+    ANXBridgeInitializer(numFunctionsToTest, &func);
 
     *functionsToSet = func;
 }
@@ -90,7 +203,7 @@ void ANXTwitterInitializer(void** extDataToSet, FREContextInitializer* ctxInitia
     *ctxFinalizerToSet = &ANXTwitterContextFinalizer;
 }
 
-void ANTwitterFinalizer(void* extData)
+void ANXTwitterFinalizer(void* extData)
 {
-    NSLog(@"ANTwitterFinalizer");
+    NSLog(@"ANXTwitterFinalizer");
 }

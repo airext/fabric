@@ -1,0 +1,13 @@
+<platform xmlns="http://ns.adobe.com/air/extension/4.0">
+    <description></description> 
+    <sdkVersion>6.0</sdkVersion> 
+    <linkerOptions>
+        <option>-framework Fabric</option>
+        <option>-framework CoreText</option>
+        <option>-framework Accounts</option>
+        <option>-framework Social</option>
+    </linkerOptions> 
+    <packagedDependencies> 
+        <packagedDependency>TwitterKit.framework</packagedDependency>
+    </packagedDependencies> 
+</platform>

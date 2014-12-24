@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0638461A3992E80052E1A8 /* libTwitter.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5028B09B1A11306F007A3D32 /* libTwitter.a */; };
+		0E0638491A39BF930052E1A8 /* ANXBridgeCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0638481A39BF930052E1A8 /* ANXBridgeCall.m */; };
+		0E06384C1A3AEFD70052E1A8 /* ANXTwitterSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06384B1A3AEFD70052E1A8 /* ANXTwitterSession.m */; };
+		0E06384F1A3AF9880052E1A8 /* ANXTwitterGuestSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E06384E1A3AF9880052E1A8 /* ANXTwitterGuestSession.m */; };
+		0E0638521A3B4CE10052E1A8 /* ANXDigitsSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0638511A3B4CE10052E1A8 /* ANXDigitsSession.m */; };
 		5028B09F1A11306F007A3D32 /* ANXTwitterFacade.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */; };
 		5028B0A11A11306F007A3D32 /* ANXTwitterFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */; };
 		5028B0B91A11450A007A3D32 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5028B0B81A11450A007A3D32 /* TwitterKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0E0638451A3992D60052E1A8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${PROJECT_DIR}/../../build/ios";
+			dstSubfolderSpec = 0;
+			files = (
+				0E0638461A3992E80052E1A8 /* libTwitter.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5028B0991A11306F007A3D32 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -26,6 +41,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0638471A39BF930052E1A8 /* ANXBridgeCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXBridgeCall.h; sourceTree = "<group>"; };
+		0E0638481A39BF930052E1A8 /* ANXBridgeCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXBridgeCall.m; sourceTree = "<group>"; };
+		0E06384A1A3AEFD70052E1A8 /* ANXTwitterSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXTwitterSession.h; sourceTree = "<group>"; };
+		0E06384B1A3AEFD70052E1A8 /* ANXTwitterSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXTwitterSession.m; sourceTree = "<group>"; };
+		0E06384D1A3AF9880052E1A8 /* ANXTwitterGuestSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXTwitterGuestSession.h; sourceTree = "<group>"; };
+		0E06384E1A3AF9880052E1A8 /* ANXTwitterGuestSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXTwitterGuestSession.m; sourceTree = "<group>"; };
+		0E0638501A3B4CE10052E1A8 /* ANXDigitsSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXDigitsSession.h; sourceTree = "<group>"; };
+		0E0638511A3B4CE10052E1A8 /* ANXDigitsSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXDigitsSession.m; sourceTree = "<group>"; };
 		5028B09B1A11306F007A3D32 /* libTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwitter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXTwitterFacade.h; sourceTree = "<group>"; };
 		5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXTwitterFacade.m; sourceTree = "<group>"; };
@@ -69,6 +92,14 @@
 				5028B0B61A113DF7007A3D32 /* Supporting Files */,
 				5028B09E1A11306F007A3D32 /* ANXTwitterFacade.h */,
 				5028B0A01A11306F007A3D32 /* ANXTwitterFacade.m */,
+				0E0638501A3B4CE10052E1A8 /* ANXDigitsSession.h */,
+				0E0638511A3B4CE10052E1A8 /* ANXDigitsSession.m */,
+				0E0638471A39BF930052E1A8 /* ANXBridgeCall.h */,
+				0E0638481A39BF930052E1A8 /* ANXBridgeCall.m */,
+				0E06384A1A3AEFD70052E1A8 /* ANXTwitterSession.h */,
+				0E06384B1A3AEFD70052E1A8 /* ANXTwitterSession.m */,
+				0E06384D1A3AF9880052E1A8 /* ANXTwitterGuestSession.h */,
+				0E06384E1A3AF9880052E1A8 /* ANXTwitterGuestSession.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -93,6 +124,7 @@
 				5028B0971A11306F007A3D32 /* Sources */,
 				5028B0981A11306F007A3D32 /* Frameworks */,
 				5028B0991A11306F007A3D32 /* CopyFiles */,
+				0E0638451A3992D60052E1A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -140,6 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5028B0A11A11306F007A3D32 /* ANXTwitterFacade.m in Sources */,
+				0E0638521A3B4CE10052E1A8 /* ANXDigitsSession.m in Sources */,
+				0E06384F1A3AF9880052E1A8 /* ANXTwitterGuestSession.m in Sources */,
+				0E06384C1A3AEFD70052E1A8 /* ANXTwitterSession.m in Sources */,
+				0E0638491A39BF930052E1A8 /* ANXBridgeCall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +301,7 @@
 				5028B0B11A113070007A3D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

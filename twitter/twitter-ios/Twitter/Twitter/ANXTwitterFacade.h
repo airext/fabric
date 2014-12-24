@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import <Twitter/Twitter.h>
+#import <TwitterKit/TwitterKit.h>
 
 #import "FlashRuntimeExtensions.h"
+
+#import "ANXBridgeCall.h"
+
+#import "ANXTwitterSession.h"
+#import "ANXTwitterGuestSession.h"
+#import "ANXDigitsSession.h"
 
 #import "ANXFabricConversionRoutines.h"
 
@@ -22,6 +28,7 @@
 
 FREObject ANXTwitterIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
+#pragma mark Twitter
 
 FREObject ANXTwitterLogin(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
@@ -31,6 +38,12 @@ FREObject ANXTwitterLogout(FREContext context, void* functionData, uint32_t argc
 FREObject ANXTwitterLoginGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject ANXTwitterLogoutGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+#pragma mark Digits
+
+FREObject ANXDigitsAuthenticate(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject ANXDigitsLogout(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 #pragma mark ContextInitialize/ContextFinalizer
 
@@ -42,4 +55,4 @@ void ANXTwitterContextFinalizer(FREContext ctx);
 
 void ANXTwitterInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet);
 
-void ANTwitterinalizer(void* extData);
+void ANXTwitterFinalizer(void* extData);
