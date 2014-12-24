@@ -42,6 +42,7 @@
 
     <!-- Identifies the ActionScript extensions used by an application. -->
     <extensions>
+        <extensionID>com.github.airext.Bridge</extensionID>
         <extensionID>com.github.airext.fabric.Fabric</extensionID>
         <extensionID>com.github.airext.fabric.Crashlytics</extensionID>
         <extensionID>com.github.airext.fabric.Twitter</extensionID>

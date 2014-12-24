@@ -1,38 +1,31 @@
 //
 //  ANXBridgeCall.h
-//  Twitter
+//  Bridge
 //
-//  Created by Max Rozdobudko on 12/11/14.
+//  Created by Max Rozdobudko on 12/22/14.
 //  Copyright (c) 2014 Max Rozdobudko. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
 
 #import "FlashRuntimeExtensions.h"
 
 @interface ANXBridgeCall : NSObject
 
-+(ANXBridgeCall*) create: (FREContext) context;
+#pragma mark Constructor
 
-@property FREContext context;
+-(id) init: (FREContext) aContext callId: (NSUInteger) aCallId;
 
-@property NSUInteger callId;
+# pragma mark Getters
 
-@property id completionValue;
+-(id) getResultValue;
 
-@property NSError* failureReason;
+-(NSError*) getRejectReason;
+
+# pragma mark Methods
 
 -(void) result: (id) value;
 
--(void) reject: (NSError*) error;
+-(void) reject: (NSError*) error; 
 
 -(FREObject) toFREObject;
 
 @end
-
-#pragma mark C API
-
-void ANXBridgeInitializer(uint32_t* numFunctionsToTest, FRENamedFunction** functionsToSet);
-
-FREObject ANXBridgeCallGetValue(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
-FREObject ANXBridgeCallGetError(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);

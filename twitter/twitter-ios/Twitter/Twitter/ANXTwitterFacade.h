@@ -12,6 +12,7 @@
 
 #import "FlashRuntimeExtensions.h"
 
+#import "ANXBridge.h"
 #import "ANXBridgeCall.h"
 
 #import "ANXTwitterSession.h"

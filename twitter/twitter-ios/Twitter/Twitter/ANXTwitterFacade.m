@@ -23,7 +23,7 @@ FREObject ANXTwitterLogin(FREContext context, void* functionData, uint32_t argc,
 {
     NSLog(@"ANXTwitterLogin");
     
-    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    ANXBridgeCall* call = [ANXBridge call:context];
     
     [[Twitter sharedInstance] logInWithCompletion:
         ^(TWTRSession *session, NSError *error)
@@ -58,7 +58,7 @@ FREObject ANXTwitterLoginGuest(FREContext context, void* functionData, uint32_t 
 {
     NSLog(@"ANXTwitterLoginGuest");
     
-    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    ANXBridgeCall* call = [ANXBridge call:context];
     
     [[Twitter sharedInstance] logInGuestWithCompletion:
         ^(TWTRGuestSession *session, NSError *error)
@@ -95,7 +95,7 @@ FREObject ANXDigitsAuthenticate(FREContext context, void* functionData, uint32_t
 {
     NSLog(@"ANXDigitsAuthenticate");
     
-    ANXBridgeCall* call = [ANXBridgeCall create:context];
+    ANXBridgeCall* call = [ANXBridge call:context];
     
     if (argc == 0)
     {
@@ -181,7 +181,7 @@ void ANXTwitterContextInitializer(void* extData, const uint8_t* ctxType, FRECont
     func[6].functionData = NULL;
     func[6].function = &ANXDigitsLogout;
     
-    ANXBridgeInitializer(numFunctionsToTest, &func);
+    [ANXBridge setup:numFunctionsToTest functions:&func];
 
     *functionsToSet = func;
 }
