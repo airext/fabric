@@ -201,7 +201,7 @@ void ANXCrashlyticsContextInitializer(void* extData, const uint8_t* ctxType, FRE
     func[8].functionData = NULL;
     func[8].function = &ANXCrashlyticsSetUserName;
     
-    func[9].name = (const uint8_t*) "setuserEmail";
+    func[9].name = (const uint8_t*) "setUserEmail";
     func[9].functionData = NULL;
     func[9].function = &ANXCrashlyticsSetUserEmail;
     

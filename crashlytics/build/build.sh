@@ -5,7 +5,7 @@ unzip -o crashlytics.swc
 unzip -o default/crashlytics-default.swc -d default
 
 # copy frameworks to be included into ANE
-mkdir ios
+mkdir -p ios
 cp -R -L -f ../crashlytics-ios/Crashlytics/Crashlytics.framework/ ios/Crashlytics.framework
 
 adt -package -storetype pkcs12 -keystore $AIR_CERTIFICATE -storepass $AIR_CERTIFICATE_STOREPASS -target ane crashlytics.ane extension.xml -swc crashlytics.swc -platform iPhone-ARM library.swf -platformoptions platform.xml -C ios . -platform default -C default library.swf

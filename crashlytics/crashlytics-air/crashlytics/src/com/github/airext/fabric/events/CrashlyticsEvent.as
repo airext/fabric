@@ -1,5 +1,5 @@
 /**
- * Created by mobitile on 11/6/14.
+ * Created by Max Rozdobudko on 11/6/14.
  */
 package com.github.airext.fabric.events
 {
