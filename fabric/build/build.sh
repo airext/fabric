@@ -5,7 +5,7 @@ unzip -o fabric.swc
 unzip -o default/fabric-default.swc -d default
 
 # copy frameworks to be included into ANE
-mkdir ios
+mkdir -p ios
 cp -R -L -f ../fabric-ios/Fabric/Fabric.framework/ ios/Fabric.framework
 
 adt -package -storetype pkcs12 -keystore $AIR_CERTIFICATE -storepass $AIR_CERTIFICATE_STOREPASS -target ane fabric.ane extension.xml -swc fabric.swc -platform iPhone-ARM library.swf -platformoptions platform.xml -C ios . -platform default -C default library.swf
