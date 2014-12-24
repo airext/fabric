@@ -44,6 +44,7 @@
     <extensions>
         <extensionID>com.github.airext.fabric.Fabric</extensionID>
         <extensionID>com.github.airext.fabric.Crashlytics</extensionID>
+        <extensionID>com.github.airext.fabric.Twitter</extensionID>
     </extensions>
 
     <!-- Settings for the application's initial window. Required. -->
@@ -211,15 +212,15 @@
                         <string>Crashlytics</string>
                     </dict>
                     <dict>
-                        <!--<key>KitInfo</key>-->
-                        <!--<dict>-->
-                            <!--<key>consumerKey</key>-->
-                            <!--<string>8WkkOaXrLLTmbeNvlRQeXaVGw</string>-->
-                            <!--<key>consumerSecret</key>-->
-                            <!--<string>OHru0ahXyBg0ilGKJtEeWK2h1RMMRveAiptjNVV4WZqUgcpOQx</string>-->
-                        <!--</dict>-->
-                        <!--<key>KitName</key>-->
-                        <!--<string>Twitter</string>-->
+                        <key>KitInfo</key>
+                        <dict>
+                            <key>consumerKey</key>
+                            <string>8WkkOaXrLLTmbeNvlRQeXaVGw</string>
+                            <key>consumerSecret</key>
+                            <string>OHru0ahXyBg0ilGKJtEeWK2h1RMMRveAiptjNVV4WZqUgcpOQx</string>
+                        </dict>
+                        <key>KitName</key>
+                        <string>Twitter</string>
                     </dict>
                 </array>
             </dict>

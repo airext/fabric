@@ -5,6 +5,7 @@
                 <![CDATA[
                 import com.github.airext.fabric.Crashlytics;
                 import com.github.airext.fabric.Fabric;
+                import com.github.airext.fabric.Twitter;
 
                 import spark.components.Alert;
 
@@ -20,7 +21,7 @@
 
                 private function withKits_clickHandler(event:MouseEvent):void
                 {
-                        Fabric.withKits(new Crashlytics());
+                        Fabric.withKits(new Crashlytics(), new Twitter());
                 }
 
                 ]]>

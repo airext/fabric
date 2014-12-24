@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
         xmlns:s="library://ns.adobe.com/flex/spark">
+        <fx:Script>
+                <![CDATA[
+                import com.github.airext.fabric.Digits;
+                import com.github.airext.fabric.Twitter;
 
+                import spark.components.Alert;
+
+                [Bindable]
+                private var authenticationTitle:String;
+
+                private function authenticationCallback(error:Error=null, value:Object=null):void
+                {
+                        trace("authenticationCallback");
+                        trace(error);
+                        trace(value);
+                }
+
+                ]]>
+        </fx:Script>
+
+        <fx:Declarations>
+
+        </fx:Declarations>
+
+        <s:layout>
+                <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
+        </s:layout>
+
+        <s:Button label="Is Supported" click="Alert.show(String(Digits.isSupported()));" />
+
+        <s:Label text="Authentication" />
+
+        <s:TextInput width="100%" text="@{authenticationTitle}" prompt="Enter title for the modal screens" />
+        <s:Button label="Authenticate" click="Digits.sharedInstance().authenticate(title, authenticationCallback);" />
+        <s:Button label="Logout" click="Digits.sharedInstance().logout();" />
 </s:View>
