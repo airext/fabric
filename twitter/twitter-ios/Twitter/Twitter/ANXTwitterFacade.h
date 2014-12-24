@@ -29,16 +29,27 @@
 
 FREObject ANXTwitterIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
+FREObject ANXTwitterVersion(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
 #pragma mark Twitter
+
+FREObject ANXTwitterStartWith(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject ANXTwitterGetConsumerKey(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject ANXTwitterGetConsumerSecret(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject ANXTwitterLogin(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject ANXTwitterLogout(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
+FREObject ANXTwitterGetSession(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject ANXTwitterLoginGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject ANXTwitterLogoutGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject ANXTwitterGetGuestSession(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 #pragma mark Digits
 

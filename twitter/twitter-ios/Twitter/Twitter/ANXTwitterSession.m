@@ -29,6 +29,9 @@
 
 -(FREObject) toFREObject
 {
+    if (!self.originalSession)
+        return NULL;
+    
     FREResult result;
     
     FREObject session;

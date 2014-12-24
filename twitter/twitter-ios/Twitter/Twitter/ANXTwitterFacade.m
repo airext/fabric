@@ -12,12 +12,48 @@
 
 @end
 
+#pragma mark API
+
 FREObject ANXTwitterIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     return [ANXFabricConversionRoutines convertBoolToFREObject: YES];
 }
 
+FREObject ANXTwitterVersion(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    return [ANXFabricConversionRoutines convertNSStringToFREObject:[Twitter sharedInstance].version];
+}
+
 #pragma mark Twitter
+
+FREObject ANXTwitterStartWith(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXTwitterStartWith");
+    
+    if (argc == 2)
+    {
+        NSString* consumerKey = [ANXFabricConversionRoutines convertFREObjectToNSString:argv[0]];
+        NSString* consumerSecret = [ANXFabricConversionRoutines convertFREObjectToNSString:argv[1]];
+        
+        [[Twitter sharedInstance] startWithConsumerKey:consumerKey consumerSecret:consumerSecret];
+    }
+    
+    return NULL;
+}
+
+FREObject ANXTwitterGetConsumerKey(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXTwitterGetConsumerKey");
+    
+    return [ANXFabricConversionRoutines convertNSStringToFREObject:[Twitter sharedInstance].consumerKey];
+}
+
+FREObject ANXTwitterGetConsumerSecret(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXTwitterGetConsumerSecret");
+    
+    return [ANXFabricConversionRoutines convertNSStringToFREObject:[Twitter sharedInstance].consumerSecret];
+}
 
 FREObject ANXTwitterLogin(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
@@ -54,6 +90,15 @@ FREObject ANXTwitterLogout(FREContext context, void* functionData, uint32_t argc
     return NULL;
 }
 
+FREObject ANXTwitterGetSession(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXTwitterGetSession");
+    
+    ANXTwitterSession *session = [[ANXTwitterSession alloc] init:[[Twitter sharedInstance] session]];
+    
+    return [session toFREObject];
+}
+
 FREObject ANXTwitterLoginGuest(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     NSLog(@"ANXTwitterLoginGuest");
@@ -87,6 +132,15 @@ FREObject ANXTwitterLogoutGuest(FREContext context, void* functionData, uint32_t
     [[Twitter sharedInstance] logOutGuest];
     
     return NULL;
+}
+
+FREObject ANXTwitterGetGuestSession(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    NSLog(@"ANXTwitterGetGuestSession");
+    
+    ANXTwitterGuestSession *session = [[ANXTwitterGuestSession alloc] init:[[Twitter sharedInstance] guestSession]];
+    
+    return [session toFREObject];
 }
 
 #pragma mark Digits
@@ -149,7 +203,7 @@ void ANXTwitterContextInitializer(void* extData, const uint8_t* ctxType, FRECont
 {
     NSLog(@"ANXTwitterContextInitializer");
     
-    *numFunctionsToTest = 7;
+    *numFunctionsToTest = 13;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -157,29 +211,53 @@ void ANXTwitterContextInitializer(void* extData, const uint8_t* ctxType, FRECont
     func[0].functionData = NULL;
     func[0].function = &ANXTwitterIsSupported;
     
-    func[1].name = (const uint8_t*) "login";
+    func[1].name = (const uint8_t*) "version";
     func[1].functionData = NULL;
-    func[1].function = &ANXTwitterLogin;
+    func[1].function = &ANXTwitterVersion;
     
-    func[2].name = (const uint8_t*) "logout";
+    func[2].name = (const uint8_t*) "startWith";
     func[2].functionData = NULL;
-    func[2].function = &ANXTwitterLogout;
+    func[2].function = &ANXTwitterStartWith;
     
-    func[3].name = (const uint8_t*) "loginGuest";
+    func[3].name = (const uint8_t*) "getConsumerKey";
     func[3].functionData = NULL;
-    func[3].function = &ANXTwitterLoginGuest;
+    func[3].function = &ANXTwitterGetConsumerKey;
     
-    func[4].name = (const uint8_t*) "logoutGuest";
+    func[4].name = (const uint8_t*) "getConsumerSecret";
     func[4].functionData = NULL;
-    func[4].function = &ANXTwitterLogoutGuest;
+    func[4].function = &ANXTwitterGetConsumerSecret;
     
-    func[5].name = (const uint8_t*) "digitsAuthenticate";
+    func[5].name = (const uint8_t*) "login";
     func[5].functionData = NULL;
-    func[5].function = &ANXDigitsAuthenticate;
+    func[5].function = &ANXTwitterLogin;
     
-    func[6].name = (const uint8_t*) "digitsLogout";
+    func[6].name = (const uint8_t*) "logout";
     func[6].functionData = NULL;
-    func[6].function = &ANXDigitsLogout;
+    func[6].function = &ANXTwitterLogout;
+    
+    func[7].name = (const uint8_t*) "getSession";
+    func[7].functionData = NULL;
+    func[7].function = &ANXTwitterGetSession;
+    
+    func[8].name = (const uint8_t*) "loginGuest";
+    func[8].functionData = NULL;
+    func[8].function = &ANXTwitterLoginGuest;
+    
+    func[9].name = (const uint8_t*) "logoutGuest";
+    func[9].functionData = NULL;
+    func[9].function = &ANXTwitterLogoutGuest;
+    
+    func[10].name = (const uint8_t*) "getGuestSession";
+    func[10].functionData = NULL;
+    func[10].function = &ANXTwitterGetGuestSession;
+    
+    func[11].name = (const uint8_t*) "digitsAuthenticate";
+    func[11].functionData = NULL;
+    func[11].function = &ANXDigitsAuthenticate;
+    
+    func[12].name = (const uint8_t*) "digitsLogout";
+    func[12].functionData = NULL;
+    func[12].function = &ANXDigitsLogout;
     
     [ANXBridge setup:numFunctionsToTest functions:&func];
 

@@ -2,6 +2,9 @@
  * Created by Max Rozdobudko on 12/11/14.
  */
 package com.github.airext.fabric {
+import com.github.airext.fabric.data.TwitterGuestSession;
+import com.github.airext.fabric.data.TwitterSession;
+
 import flash.system.Capabilities;
 
 public class Twitter
@@ -60,11 +63,82 @@ public class Twitter
         }
     }
 
+
+    //--------------------------------------------------------------------------
+    //
+    //  Properties
+    //
+    //--------------------------------------------------------------------------
+
+    //-------------------------------------
+    //  version
+    //-------------------------------------
+
+    public static function get version():String
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
+    //-------------------------------------
+    //  consumerKey
+    //-------------------------------------
+
+    public function get consumerKey():String
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
+    //-------------------------------------
+    //  consumerSecret
+    //-------------------------------------
+
+    public function get consumerSecret():String
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
+    //-------------------------------------
+    //  session
+    //-------------------------------------
+
+    public function get session():TwitterSession
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
+    //-------------------------------------
+    //  guestSession
+    //-------------------------------------
+
+    public function get guestSession():TwitterGuestSession
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Methods
     //
     //--------------------------------------------------------------------------
+
+    //-------------------------------------
+    //  Methods: Initialization
+    //-------------------------------------
+
+    public function startWith(consumerKey:String, consumerSecret:String):void
+    {
+        trace("Twitter is not supported for " + Capabilities.os);
+    }
 
     //-------------------------------------
     //  Methods: User Authentication

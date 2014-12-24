@@ -5,6 +5,8 @@
                 <![CDATA[
                 import com.github.airext.fabric.Twitter;
 
+                import spark.components.Alert;
+
                 private function loginCallback(error:Error=null, value:Object=null):void
                 {
                         trace("loginCallback");
@@ -30,12 +32,14 @@
                 <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
         </s:layout>
 
-        <s:Label text="Authentication" />
+        <s:Label text="Twitter {Twitter.version}" />
 
         <s:Button label="Login" click="Twitter.sharedInstance().login(loginCallback);" />
         <s:Button label="Logout" click="Twitter.sharedInstance().logout();" />
+        <s:Button label="Get Session" click="Alert.show(String(Twitter.sharedInstance().session));" />
 
         <s:Button label="Guest Login" click="Twitter.sharedInstance().loginGuest(loginGuestCallback);" />
         <s:Button label="Guest Logout" click="Twitter.sharedInstance().logoutGuest();" />
+        <s:Button label="Get Guest Session" click="Alert.show(String(Twitter.sharedInstance().guestSession));" />
 
 </s:View>

@@ -19,7 +19,7 @@ public class Twitter
 {
     //--------------------------------------------------------------------------
     //
-    //  Class methods
+    //  Class constants
     //
     //--------------------------------------------------------------------------
 
@@ -105,9 +105,69 @@ public class Twitter
 
     //--------------------------------------------------------------------------
     //
+    //  Properties
+    //
+    //--------------------------------------------------------------------------
+
+    //-------------------------------------
+    //  version
+    //-------------------------------------
+
+    public static function get version():String
+    {
+        return context.call("version") as String;
+    }
+
+    //-------------------------------------
+    //  consumerKey
+    //-------------------------------------
+
+    public function get consumerKey():String
+    {
+        return context.call("getConsumerKey") as String;
+    }
+
+    //-------------------------------------
+    //  consumerSecret
+    //-------------------------------------
+
+    public function get consumerSecret():String
+    {
+        return context.call("getConsumerSecret") as String;
+    }
+
+    //-------------------------------------
+    //  session
+    //-------------------------------------
+
+    public function get session():TwitterSession
+    {
+        return context.call("getSession") as TwitterSession;
+    }
+
+    //-------------------------------------
+    //  guestSession
+    //-------------------------------------
+
+    public function get guestSession():TwitterGuestSession
+    {
+        return context.call("getGuestSession") as TwitterGuestSession;
+    }
+
+    //--------------------------------------------------------------------------
+    //
     //  Methods
     //
     //--------------------------------------------------------------------------
+
+    //-------------------------------------
+    //  Methods: Initialization
+    //-------------------------------------
+
+    public function startWith(consumerKey:String, consumerSecret:String):void
+    {
+        context.call("startWith", consumerKey, consumerSecret);
+    }
 
     //-------------------------------------
     //  Methods: User Authentication
