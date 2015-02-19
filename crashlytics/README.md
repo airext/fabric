@@ -3,9 +3,9 @@
 ## Overview
 Almost all Crashlytics API are implemented, except callback for crash reports.
 
-## iOS Setup
+## Setup
 
-Add Crashlytics kit info into `<InfoAdditions>` section of your application descriptor:
+Link [crashlytics.ane](bin/crashlytics.ane) to your project and add Crashlytics kit info into `<InfoAdditions>` section of your application descriptor:
 ```xml
 <key>Fabric</key>
 <dict>
