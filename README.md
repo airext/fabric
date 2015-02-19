@@ -11,7 +11,7 @@ At this moment next Kits are available:
 * [Twitter Kit](twitter)
 
 ## Setup
-Link [fabric.ane](bin/fabric.ane) and add Fabric API_KEY info into <InfoAdditions> section of your application descriptor:
+Link [fabric.ane](bin/fabric.ane) and add Fabric API_KEY info into `<InfoAdditions>` section of your application descriptor:
 ```xml
 <key>Fabric</key>
 <dict>
