@@ -12,7 +12,7 @@ At this moment next Kits are available:
 
 ## Setup
 
-You need to upload your *.ipa* file to Fabric server if you use Crashlytcis Kit. You can use [tools/FabricAppUpload.app](https://github.com/airext/fabric/wiki/How-To-Use-FabricAppUpload.app) application for this. But notice that it is only for Mac and is not stable, more info you can find in [tools](tools)'s Upload Application section.
+You need to upload your *.ipa* file to Fabric server if you use Crashlytcis Kit. You can use [tools/FabricAppUpload.app](https://github.com/airext/fabric/wiki/How-To-Use-FabricAppUpload.app) application for this. 
 
 ## Usage
 
