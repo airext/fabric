@@ -3,7 +3,7 @@
 ## Overview
 
 ## Setup
-Link [twitter.ane](bin/twitter.ane) and [anx-bridge.ane](https://github.com/airext/anx-bridge/bin/anx-bridge.ane) to your project and add Twitter Kit keys into `<InfoAdditions>` section of your application descriptor:
+Link [twitter.ane](bin/twitter.ane) and [anx-bridge.ane](https://github.com/airext/anx-bridge/tree/master/bin/anx-bridge.ane) to your project and add Twitter Kit keys into `<InfoAdditions>` section of your application descriptor:
 
 
 ```xml
