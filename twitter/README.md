@@ -3,7 +3,7 @@
 ## Overview
 Only authentication methods are implemented.
 
-**NOTE**: This ANE is use [anx-bridge] native extension for callbacks.
+**NOTE**: This ANE is use [anx-bridge](http://github.com/airext/anx-bridge) native extension for callbacks.
 
 ## Setup
 Link [twitter.ane](bin/twitter.ane) and [anx-bridge.ane](https://github.com/airext/anx-bridge/tree/master/bin/anx-bridge.ane) to your project and add Twitter Kit keys into `<InfoAdditions>` section of your application descriptor:
