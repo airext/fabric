@@ -10,7 +10,7 @@ Link [crashlytics.ane](bin/crashlytics.ane) to your project and add Crashlytics 
 <key>Fabric</key>
 <dict>
     <key>APIKey</key>
-    <string>${YOUR_FABRIC_API_KEY}</string>
+    <string>${FABRIC_API_KEY}</string>
     <key>Kits</key>
     <array>
         <dict>
