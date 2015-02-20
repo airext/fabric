@@ -15,7 +15,7 @@ At this moment the next Kits are available:
 * declare extension in your application descriptor:
 ```xml
 <extensions> 
-    <extensionID>com.github.airext.Fabric</extensionID> 
+    <extensionID>com.github.airext.fabric.Fabric</extensionID> 
 </extensions>
 ```
 * add Fabric API_KEY into `<InfoAdditions>` section of your application descriptor:
