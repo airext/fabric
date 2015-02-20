@@ -3,13 +3,17 @@
 ## Overview
 This is [AIR Native Extension](http://www.adobe.com/devnet/air/native-extensions-for-air.html) for Fabric [Crashlytics Kit](https://dev.twitter.com/crashlytics/overview).
 
+## Dependencies
+* [fabric.ane](https://github.com/airext/fabric) - a main extension that initializes this kit;
+
 ## Setup
-* setup fabric.ane as described [here](https://github.com/airext/fabric);
-* link [crashlytics.ane](bin/fabric.ane) to your project ([details](http://help.adobe.com/en_US/air/build/WS597e5dadb9cc1e0253f7d2fc1311b491071-8000.html));
-* declare extension in your application descriptor:
+* link [fabric.ane](https://github.com/airext/fabric/tree/master/bin/fabric.ane) with your project;
+* link [crashlytics.ane](https://github.com/airext/fabric/tree/master/bin/crashlytics.ane) with your project;
+* declare extensions in your application descriptor:
 ```xml
 <extensions> 
-    <extensionID>com.github.airext.fabric.Crashlytics</extensionID> 
+    <extensionID>com.github.airext.fabric.Fabric</extensionID>
+    <extensionID>com.github.airext.fabric.Crashlytics</extensionID>
 </extensions>
 ```
 * add Crashlytics Kit info into `<InfoAdditions>` section of your application descriptor:
