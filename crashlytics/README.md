@@ -4,7 +4,7 @@
 This is [AIR Native Extension](http://www.adobe.com/devnet/air/native-extensions-for-air.html) for Fabric [Crashlytics Kit](https://dev.twitter.com/crashlytics/overview).
 
 ## Dependencies
-* [fabric.ane](https://github.com/airext/fabric) - a main extension that initializes this kit;
+* [fabric.ane](https://github.com/airext/fabric/fabric) - a main extension that initializes this kit;
 
 ## Setup
 * link [fabric.ane](https://github.com/airext/fabric/tree/master/bin/fabric.ane) with your project;
