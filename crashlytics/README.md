@@ -9,7 +9,7 @@ This is [AIR Native Extension](http://www.adobe.com/devnet/air/native-extensions
 * declare extension in your application descriptor:
 ```xml
 <extensions> 
-    <extensionID>com.github.airext.Crashlytics</extensionID> 
+    <extensionID>com.github.airext.fabric.Crashlytics</extensionID> 
 </extensions>
 ```
 * add Crashlytics Kit info into `<InfoAdditions>` section of your application descriptor:
