@@ -4,7 +4,7 @@
 This is [AIR Native Extension](http://www.adobe.com/devnet/air/native-extensions-for-air.html) for Fabric [Twitter Kit](https://dev.twitter.com/twitter-kit/overview).
 
 ## Dependencies
-* [fabric.ane](https://github.com/airext/fabric) - a main extension that initializes this kit;
+* [fabric.ane](https://github.com/airext/fabric/fabric) - a main extension that initializes this kit;
 * [anx-bridge.ane](https://github.com/airext/anx-bridge) - an extension that used for asynchronous calls;
 
 ## Setup
