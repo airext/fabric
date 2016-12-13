@@ -26,11 +26,11 @@ export FABRIC_API_KEY=$(input_dialog "Enter Fabric API Key" "The Fabric API Key 
 export FABRIC_BUILD_SECRET=$(input_dialog "Enter Fabric Build Secret" "The Fabric Build Secret you can fing on the Organization Setting page." "$FABRIC_BUILD_SECRET")
 
 if [ -z "$IPA_PATH" ]; then
-export IPA_PATH=$(file_dialog "Select your .IPA file:" "IPA")
+	export IPA_PATH=$(file_dialog "Select your .IPA file:" "IPA")
 fi
 
 if [ -z "$DSYM_PATH" ]; then
-export DSYM_PATH=$(file_dialog "Select your .dSYM file:" "com.apple.xcode.dsym")
+	export DSYM_PATH=$(file_dialog "Select your .dSYM file:" "com.apple.xcode.dsym")
 fi
 
 xcodebuild -project $SCRIPT_DIR/fabricupload.xcodeproj > ~/tmp/log.txt
