@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/crashlytics/crashlytics-air/crashlytics/crashlytics.iml" filepath="$PROJECT_DIR$/crashlytics/crashlytics-air/crashlytics/crashlytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crashlytics/crashlytics-air/crashlytics-default/crashlytics-default.iml" filepath="$PROJECT_DIR$/crashlytics/crashlytics-air/crashlytics-default/crashlytics-default.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fabric/fabric-air/fabric/fabric.iml" filepath="$PROJECT_DIR$/fabric/fabric-air/fabric/fabric.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fabric/fabric-air/fabric-debug/fabric-debug.iml" filepath="$PROJECT_DIR$/fabric/fabric-air/fabric-debug/fabric-debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fabric/fabric-air/fabric-default/fabric-default.iml" filepath="$PROJECT_DIR$/fabric/fabric-air/fabric-default/fabric-default.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twitter/twitter-air/twitter/twitter.iml" filepath="$PROJECT_DIR$/twitter/twitter-air/twitter/twitter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twitter/twitter-air/twitter-default/twitter-default.iml" filepath="$PROJECT_DIR$/twitter/twitter-air/twitter-default/twitter-default.iml" />
+    </modules>
+  </component>
+</project>

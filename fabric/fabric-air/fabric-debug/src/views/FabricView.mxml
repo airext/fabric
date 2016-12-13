@@ -3,6 +3,7 @@
 
         <fx:Script>
                 <![CDATA[
+                import com.github.airext.bridge.core.Bridge;
                 import com.github.airext.fabric.Crashlytics;
                 import com.github.airext.fabric.Fabric;
                 import com.github.airext.fabric.Twitter;
@@ -24,6 +25,12 @@
                         Fabric.withKits(new Crashlytics(), new Twitter());
                 }
 
+                private function alert(msg:String):void
+                {
+                        Alert.show(msg);
+                        trace(msg);
+                }
+
                 ]]>
         </fx:Script>
 
@@ -36,6 +43,8 @@
         </s:layout>
 
         <s:Button label="Is Supported" click="isSupported_clickHandler(event)" />
+
+        <s:Button label="Bridge.version" click="alert(Bridge.extensionVersion())" />
 
         <s:Button label="With Kits" click="withKits_clickHandler(event)" />
 
